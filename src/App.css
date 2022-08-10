@@ -1,0 +1,96 @@
+.container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.inputContainer {
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.addContactButton {
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    background-color: rgb(53, 132, 217);
+    height: 100px;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.addContactButton:hover {
+    background-color: green;
+    font-size: xx-large;
+}
+
+.lilContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+}
+
+.inputFields {
+    height: 25px;
+    margin: 5px 5px 5px 5px;
+}
+
+.buttons {
+    background-color: skyblue;
+    margin: 5px 5px 5px 5px;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: large;
+}
+
+.contactsListContainer {
+    width: 100%;
+    background-color: beige;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.contactsListContainer > p {
+    font-weight: bold;
+    font-size: large;
+}
+
+.listOfContacts {
+    background-color: red;
+}
+
+.contact {
+    background-color: whitesmoke;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.contact > p {
+    margin: 5px;
+}
+
+.deleteButton {
+    background-color: red;
+    color: white;
+    padding: 4px;
+    border-radius: 4px;
+    margin: 5px;
+    margin-left: 50px;
+}
+
+.editButton {
+    background-color: aqua;
+    padding: 4px;
+    border-radius: 4px;
+    margin: 5px;
+}
