@@ -1,4 +1,3 @@
-import { QuerySnapshot, updateDoc } from 'firebase/firestore';
 import {useEffect, useState} from 'react';
 import "./App.css";
 import firebase from "./firebase";
@@ -49,7 +48,10 @@ function App() {
   }
 
   function editContact(updatedContact) {
-    setLoading();
+    setLoading(true);
+    if (updatedContact.id === "") {
+      return;
+    }
     ref.doc(updatedContact.id)
       .update(updatedContact)
       .catch((err) => {
@@ -83,7 +85,6 @@ function App() {
     setcategoryData(event.target.value);
   };
 
-
   if (loading) {
     return <h1>Loading...</h1>;
   }
@@ -91,6 +92,8 @@ function App() {
   return (
     <div className='container'>
       <div className='inputContainer'>
+
+        <div className='formContainer'>
 
         <div className='lilContainer'>
           <p className='buttons'>Name:</p>
@@ -123,6 +126,8 @@ function App() {
                   Category: categoryData, 
                   PhoneNumber: phoneNumberData,
                   id: nameData})}>Add Contact</button>
+
+        </div>
 
       </div>
 
