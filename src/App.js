@@ -95,30 +95,25 @@ function App() {
 
         <div className='formContainer'>
 
-        <div className='lilContainer'>
-          <p className='buttons'>Name:</p>
-          <input type="text" id='nameField' name='name' value={nameData} className='inputFields' onChange={handleChangeName} />
-        </div>
+          <div className='individualInputs'>
 
-        <div className='lilContainer'>
-          <p className='buttons'>Address:</p>
-          <input type="text" id='addressField' name='address' value={addressData} className='inputFields' onChange={handleChangeAddress}/>
-        </div>
+            <div className='inputTitlesContainer'>
+              <p className='buttons'>Name:</p>
+              <p className='buttons'>Address:</p>
+              <p className='buttons'>Phone Number:</p>
+              <p className='buttons'>Email:</p>
+              <p className='buttons'>Category:</p>
+            </div>
 
-        <div className='lilContainer'>
-          <p className='buttons'>Phone Number:</p>
-          <input type="text" id='phoneNumberField' name='phoneNumber' value={phoneNumberData} className='inputFields' onChange={handleChangePhoneNumber}/>
-        </div>
+            <div className='inputFieldsContainer'>
+              <input type="text" id='nameField' name='name' value={nameData} className='inputFields' onChange={handleChangeName} />
+              <input type="text" id='addressField' name='address' value={addressData} className='inputFields' onChange={handleChangeAddress}/>
+              <input type="text" id='phoneNumberField' name='phoneNumber' value={phoneNumberData} className='inputFields' onChange={handleChangePhoneNumber}/>
+              <input type="text" id='emailField' name='email' value={emailData} className='inputFields' onChange={handleChangeEmail}/>
+              <input type="text" id='categoryField' name='category' value={categoryData} className='inputFields' onChange={handleChangeCategory}/>
+            </div>
 
-        <div className='lilContainer'>
-          <p className='buttons'>Email:</p>
-          <input type="text" id='emailField' name='email' value={emailData} className='inputFields' onChange={handleChangeEmail}/>
-        </div>
-
-        <div className='lilContainer'>
-          <p className='buttons'>Category:</p>
-          <input type="text" id='categoryField' name='category' value={categoryData} className='inputFields' onChange={handleChangeCategory}/>
-        </div>
+          </div>
 
         <button class='addContactButton' onClick={() => addContact({Name: nameData, 
                   Address: addressData, 
