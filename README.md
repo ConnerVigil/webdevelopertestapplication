@@ -1,3 +1,8 @@
+# A simple website that allows you to input and store a list of contacts
+
+Uses React.js on the frontend and Firebase on the backend.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
