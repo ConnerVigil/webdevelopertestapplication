@@ -32,11 +32,11 @@ function App() {
       .catch((err) => {
         console.error(err);
       });
-      setnameData("");
-      setaddressData("");
-      setphoneNumberData("");
-      setemailData("");
-      setcategoryData("");
+      setNameData("");
+      setAddressData("");
+      setPhoneNumberData("");
+      setEmailData("");
+      setCategoryData("");
   }
 
   function deleteContact(contact) {
@@ -59,30 +59,30 @@ function App() {
       });
   }
 
-  const [nameData, setnameData] = useState('');
-  const [addressData, setaddressData] = useState('');
-  const [phoneNumberData, setphoneNumberData] = useState('');
-  const [emailData, setemailData] = useState('');
-  const [categoryData, setcategoryData] = useState('');
+  const [nameData, setNameData] = useState('');
+  const [addressData, setAddressData] = useState('');
+  const [phoneNumberData, setPhoneNumberData] = useState('');
+  const [emailData, setEmailData] = useState('');
+  const [categoryData, setCategoryData] = useState('');
 
   const handleChangeName = event => {
-    setnameData(event.target.value);
+    setNameData(event.target.value);
   };
 
   const handleChangeAddress = event => {
-    setaddressData(event.target.value);
+    setAddressData(event.target.value);
   };
 
   const handleChangePhoneNumber = event => {
-    setphoneNumberData(event.target.value);
+    setPhoneNumberData(event.target.value);
   };
 
   const handleChangeEmail = event => {
-    setemailData(event.target.value);
+    setEmailData(event.target.value);
   };
 
   const handleChangeCategory = event => {
-    setcategoryData(event.target.value);
+    setCategoryData(event.target.value);
   };
 
   if (loading) {
@@ -115,12 +115,13 @@ function App() {
 
           </div>
 
-        <button class='addContactButton' onClick={() => addContact({Name: nameData, 
+        <button className='addContactButton' onClick={() => addContact({Name: nameData,
                   Address: addressData, 
                   Email: emailData, 
                   Category: categoryData, 
                   PhoneNumber: phoneNumberData,
-                  id: nameData})}>Add Contact</button>
+                  id: nameData
+        })}>Add Contact</button>
 
         </div>
 
