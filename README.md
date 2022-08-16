@@ -2,6 +2,8 @@
 
 Uses React.js on the frontend and Firebase on the backend.
 
+<img width="1509" alt="Screen Shot 2022-08-16 at 4 11 37 PM" src="https://user-images.githubusercontent.com/73132308/184994225-9a8a7e6f-0a78-490a-8526-727e92ff0af9.png">
+
 
 # Getting Started with Create React App
 
