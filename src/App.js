@@ -6,11 +6,11 @@ function App() {
 
   const [contacts, setContacts]  = useState([]);
   const [loading, setLoading] = useState(false);
-
   const ref = firebase.firestore().collection("contacts");
 
   function getContacts() {
     setLoading(true);
+
     ref.onSnapshot((querySnapshot) => {
       const items = [];
       querySnapshot.forEach((doc) => {
@@ -27,19 +27,18 @@ function App() {
 
 
   function addContact(newContact) {
+
     ref.doc(newContact.id)
       .set(newContact)
       .catch((err) => {
         console.error(err);
       });
-      setNameData("");
-      setAddressData("");
-      setPhoneNumberData("");
-      setEmailData("");
-      setCategoryData("");
+
+      clearTextFields();
   }
 
   function deleteContact(contact) {
+
     ref.doc(contact.id)
       .delete()
       .catch((err) => {
@@ -49,14 +48,27 @@ function App() {
 
   function editContact(updatedContact) {
     setLoading(true);
+
     if (updatedContact.id === "") {
+      setLoading(false);
       return;
     }
+
     ref.doc(updatedContact.id)
       .update(updatedContact)
       .catch((err) => {
         console.error(err);
       });
+
+    clearTextFields();
+  }
+
+  function clearTextFields() {
+    setNameData("");
+    setAddressData("");
+    setPhoneNumberData("");
+    setEmailData("");
+    setCategoryData("");
   }
 
   const [nameData, setNameData] = useState('');
@@ -86,7 +98,7 @@ function App() {
   };
 
   if (loading) {
-    return <h1>Loading...</h1>;
+    return <h1 className='container'>Loading...</h1>;
   }
 
   return (
@@ -128,12 +140,14 @@ function App() {
       </div>
 
       <div className='contactsListContainer'>
+
         <p>List of contacts</p>
 
         <div className='listOfContacts'>
 
           {contacts.map((contact) => (
             <div key={contact.id} className='contact'>
+
               <p className='buttons'>Name:</p>
               <p>{contact.Name}</p>
               <p className='buttons'>Address:</p>
@@ -144,6 +158,7 @@ function App() {
               <p>{contact.Email}</p>
               <p className='buttons'>Category:</p>
               <p>{contact.Category}</p>
+
               <button className='deleteButton' onClick={() => deleteContact(contact)}>Delete</button>
               <button className='editButton' onClick={() => editContact(
                 {Name: nameData, 
@@ -152,6 +167,7 @@ function App() {
                   Category: categoryData, 
                   PhoneNumber: phoneNumberData,
                   id: nameData})}>Edit</button>
+
             </div>
           ))}
 
